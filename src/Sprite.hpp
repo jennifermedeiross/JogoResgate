@@ -10,7 +10,7 @@ class Sprite : public SpriteBase {
             SpriteBase(caminho) {}
         virtual ~Sprite(){}
     
-        virtual void draw(SpriteBase &screen, int x, int y);
+        virtual void draw(SpriteBase &screen, unsigned coluna, unsigned linha);
 
 };
 

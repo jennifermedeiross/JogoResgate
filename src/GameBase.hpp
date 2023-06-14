@@ -16,7 +16,7 @@ class GameBase {
 
         virtual void init() = 0;
         virtual void update() = 0;
-        virtual void draw(SpriteBase &screen, int x, int y) = 0;
+        virtual void draw(SpriteBase &screen, unsigned x, unsigned y) = 0;
 };
 
 #endif

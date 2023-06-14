@@ -1,6 +1,6 @@
 #include "Sprite.hpp"
 
-void Sprite::draw(SpriteBase &base, int xDesejado, int yDesejado){
+void Sprite::draw(SpriteBase &base, unsigned colunaDesejada, unsigned linhaDesejada){
     const std::vector<std::string> desenhoOrigem = this->getSprite();
     std::vector<std::string> desenhoDestino = base.getSprite();
 
@@ -13,15 +13,15 @@ void Sprite::draw(SpriteBase &base, int xDesejado, int yDesejado){
         int larguraDestino = desenhoDestino[i].size();
 
         for (int j = 0; j < larguraOrigem; j++) {
-            int posX = xDesejado + j;
-            int posY = yDesejado + i;
+            unsigned coluna = colunaDesejada + j;
+            unsigned linha = linhaDesejada + i;
 
-            if (posX >= 0 && posX < larguraDestino &&
-                posX >= 0 && posY < alturaDestino) {
+            if (coluna < larguraDestino &&
+                linha < alturaDestino) {
                 char pixel = desenhoOrigem[i][j];
                 if (pixel != 'x')
                 {
-                    desenhoDestino[posY][posX] = pixel;
+                    desenhoDestino[linha][coluna] = pixel;
                 }
             }
         }

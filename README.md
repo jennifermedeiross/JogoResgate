@@ -32,6 +32,11 @@ O Jogo de Resgate ASCII foi desenvolvido utilizando caracteres ASCII para repres
     ```
     ./makeplay
     ```
+      
+ Caso o g++ não seja utilizado:  
+ 
+  1. Abra o arquivo makeplay;
+  2. Modifique o primeiro parâmetro do script de acordo com o compilador desejado.
 
 ## Objetivo
 O objetivo do jogo é resgatar 5 pessoas em perigo usando um helicóptero (herói). (O resgate é concluído quando uma pessoa entra no helicóptero e é deixada na base) <br/><br/>

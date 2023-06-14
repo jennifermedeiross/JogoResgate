@@ -18,6 +18,8 @@ STL
 ## 
 
 <div align="center">
+  
+  ### Seções:
   <a href="#requisitos">Requisitos</a></h3> | 
   <a href="#instalação">Instalação</a></h3> | 
   <a href="#objetivo">Objetivo</a></h3> | 

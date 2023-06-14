@@ -24,7 +24,7 @@ O Jogo de Resgate ASCII foi desenvolvido utilizando caracteres ASCII para repres
 
 1. Clone o projeto;
 
-2. Acesse o diretório do projeto e o abra no terminal.
+2. Acesse o diretório do projeto e o abra no terminal;
 3. Execute os comandos:
     ```
     chmod +x makeplay

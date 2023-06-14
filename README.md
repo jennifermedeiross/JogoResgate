@@ -1,5 +1,6 @@
 # Jogo de Resgate ASCII
 Este projeto é o trabalho final da disciplina de Programação Orientada a Objetos (POO) em C++.    
+O Jogo de Resgate ASCII foi desenvolvido utilizando caracteres ASCII para representar os elementos visuais, então possui um estilo retrô e nostálgico.
 ##
 <div align="center">
   
@@ -13,7 +14,6 @@ STL
 
 </div>
 
-O Jogo de Resgate ASCII foi desenvolvido utilizando caracteres ASCII para representar os elementos visuais, então possui um estilo retrô e nostálgico.
 
 ## 
 

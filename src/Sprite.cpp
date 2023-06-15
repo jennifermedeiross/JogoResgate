@@ -13,8 +13,8 @@ void Sprite::draw(SpriteBase &base, unsigned colunaDesejada, unsigned linhaDesej
         int larguraDestino = desenhoDestino[i].size();
 
         for (int j = 0; j < larguraOrigem; j++) {
-            unsigned coluna = colunaDesejada + j;
-            unsigned linha = linhaDesejada + i;
+            int coluna = colunaDesejada + j;
+            int linha = linhaDesejada + i;
 
             if (coluna < larguraDestino &&
                 linha < alturaDestino) {

@@ -25,10 +25,10 @@ class ObjetoDeJogo : public GameBase
 
         bool colideCom(ObjetoDeJogo &) const;
         void moveTo(unsigned, unsigned);
-        void moveLeft() { moveTo(this->linha, this->coluna -= 2); }
-        void moveRigth() { moveTo(this->linha, this->coluna += 2); }
-        void moveDown() { moveTo(this->linha += 2, this->coluna); }
-        void moveUp() { moveTo(this->linha -= 2, this->coluna); }
+        void moveLeft();
+        void moveRigth();
+        void moveDown();
+        void moveUp();
 
         // GETTERS E SETTERS
         std::string getNome() const{ return this->nome; }
@@ -49,7 +49,7 @@ class ObjetoDeJogo : public GameBase
         virtual void update(){}
         virtual void draw(SpriteBase &screen, unsigned x, unsigned y){
             if(ativo){
-                spriteObj.draw(screen, x, y);
+                getSpriteObj().draw(screen, x, y);
             }
         } // Precisa de ajustes
     };

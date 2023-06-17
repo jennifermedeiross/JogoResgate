@@ -1,6 +1,5 @@
 #include "ObjetoDeJogo.hpp"
 
-
 bool ObjetoDeJogo::colideCom(ObjetoDeJogo &obj) const{
     int colunaThis = this->getColuna();
     int linhaThis = this->getLinha();
@@ -25,6 +24,30 @@ bool ObjetoDeJogo::colideCom(ObjetoDeJogo &obj) const{
 void ObjetoDeJogo::moveTo(unsigned linha, unsigned coluna){
     setLinha(linha);
     setColuna(coluna);
+}
+
+void ObjetoDeJogo::moveLeft(){
+    if((this->coluna - 2) >= 1){
+        moveTo(this->linha, this->coluna -= 2);
+    }
+}
+
+void ObjetoDeJogo::moveRigth(){
+    if((this->coluna + 2) <= (GameBase::LARGURA_TELA() - 1)){
+        moveTo(this->linha, this->coluna += 2);
+    }
+}
+
+void ObjetoDeJogo::moveDown(){
+    if((this->linha + 2) <= (GameBase::ALTURA_TELA() - 1)){
+        moveTo(this->linha, this->coluna -= 2);
+    }
+}
+
+void ObjetoDeJogo::moveUp(){
+    if((this->linha - 2) >= 4){
+        moveTo(this->linha, this->coluna += 2);
+    }
 }
 
 void ObjetoDeJogo::setNome(std::string nome){

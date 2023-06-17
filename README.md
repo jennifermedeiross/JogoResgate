@@ -31,7 +31,7 @@ STL
 
 ## Requisitos
 
-- Sistema operacional Linux (Recomendado);
+- Sistema operacional Linux;
 - Compilador g++.
 
 ## Instalação

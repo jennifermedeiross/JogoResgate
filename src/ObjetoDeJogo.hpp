@@ -21,7 +21,7 @@ class ObjetoDeJogo : public GameBase
         ObjetoDeJogo(std::string nome, SpriteAnimado sprite, unsigned coluna, unsigned linha) :
             nome(nome), spriteObj(sprite), coluna(coluna), linha(linha) {}
 
-        ~ObjetoDeJogo() {}
+        virtual ~ObjetoDeJogo() {}
 
         bool colideCom(ObjetoDeJogo &) const;
         void moveTo(unsigned, unsigned);

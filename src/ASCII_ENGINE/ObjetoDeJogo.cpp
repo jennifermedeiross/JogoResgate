@@ -1,20 +1,20 @@
 #include "ObjetoDeJogo.hpp"
 
 bool ObjetoDeJogo::colideCom(ObjetoDeJogo &obj) const{
-    int colunaThis = this->getColuna();
-    int linhaThis = this->getLinha();
-    int larguraThis = this->spriteObj.getSprite()[0].size();
-    int alturaThis = this->spriteObj.getSprite().size();
+    int colunaObjetoAtual = this->getColuna();
+    int linhaObjetoAtual = this->getLinha();
+    int larguraObjetoAtual = this->spriteObj.getSprite()[0].size();
+    int alturaObjetoAtual = this->spriteObj.getSprite().size();
 
-    int colunaOutro = obj.getColuna();
-    int linhaOutro = obj.getLinha();
-    int larguraOutro = obj.getSpriteObj().getSprite()[0].size();
-    int alturaOutro = obj.getSpriteObj().getSprite().size();
+    int colunaOutroObjeto = obj.getColuna();
+    int linhaOutroObjeto = obj.getLinha();
+    int larguraOutroObjeto = obj.getSpriteObj().getSprite()[0].size();
+    int alturaOutroObjeto = obj.getSpriteObj().getSprite().size();
     
-    if(colunaThis < colunaOutro + larguraOutro &&
-        colunaOutro < colunaThis + larguraThis &&
-        linhaThis < linhaOutro + alturaOutro &&
-        linhaOutro < linhaThis + alturaThis){ 
+    if(colunaObjetoAtual < colunaOutroObjeto + larguraOutroObjeto &&
+        colunaOutroObjeto < colunaObjetoAtual + larguraObjetoAtual &&
+        linhaObjetoAtual < linhaOutroObjeto + alturaOutroObjeto &&
+        linhaOutroObjeto < linhaObjetoAtual + alturaObjetoAtual ){ 
             return true;
     }
     else { return false; }
@@ -33,20 +33,24 @@ void ObjetoDeJogo::moveLeft(){
 }
 
 void ObjetoDeJogo::moveRigth(){
-    if((this->coluna + 2) <= (GameBase::LARGURA_TELA() - 1)){
+    int largura = this->spriteObj.getSprite()[0].size();
+
+    if((this->coluna + 2 + largura) <= (GameBase::LARGURA_TELA() - 1)){
         moveTo(this->linha, this->coluna += 2);
     }
 }
 
 void ObjetoDeJogo::moveDown(){
-    if((this->linha + 2) <= (GameBase::ALTURA_TELA() - 1)){
-        moveTo(this->linha, this->coluna -= 2);
+    int altura = this->spriteObj.getSprite().size();
+
+    if((this->linha + 2 + altura) <= (GameBase::ALTURA_TELA() - 1)){
+        moveTo(this->linha += 2, this->coluna);
     }
 }
 
 void ObjetoDeJogo::moveUp(){
     if((this->linha - 2) >= 4){
-        moveTo(this->linha, this->coluna += 2);
+        moveTo(this->linha -= 2, this->coluna);
     }
 }
 

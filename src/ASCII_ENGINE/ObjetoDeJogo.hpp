@@ -10,18 +10,18 @@ class ObjetoDeJogo : public GameBase
 {
     private:
         std::string nome;
-        SpriteBase spriteObj;
+        SpriteBase *spriteObj;
         bool ativo;
         unsigned coluna, linha; //x e y, respectivamente
 
     public:
         ObjetoDeJogo(std::string nome, Sprite sprite, unsigned coluna, unsigned linha) :
-            nome(nome), spriteObj(sprite), coluna(coluna), linha(linha) {}
+            nome(nome), spriteObj(new Sprite(sprite)), coluna(coluna), linha(linha) {}
 
         ObjetoDeJogo(std::string nome, SpriteAnimado sprite, unsigned coluna, unsigned linha) :
-            nome(nome), spriteObj(sprite), coluna(coluna), linha(linha) {}
+            nome(nome), spriteObj(new SpriteAnimado(sprite)), coluna(coluna), linha(linha) {}
 
-        virtual ~ObjetoDeJogo() {}
+        virtual ~ObjetoDeJogo() { delete spriteObj; }
 
         bool colideCom(ObjetoDeJogo &) const;
         void moveTo(unsigned, unsigned);
@@ -32,7 +32,7 @@ class ObjetoDeJogo : public GameBase
 
         // GETTERS E SETTERS
         std::string getNome() const{ return this->nome; }
-        SpriteBase getSpriteObj(){ return this->spriteObj; }
+        SpriteBase *getSpriteObj(){ return this->spriteObj; }
         unsigned getLinha() const { return this->linha; }
         unsigned getColuna() const { return this->coluna; }
 
@@ -47,11 +47,7 @@ class ObjetoDeJogo : public GameBase
         // GAMEBASE
         virtual void init(){}
         virtual void update(){}
-        virtual void draw(SpriteBase &screen, unsigned x, unsigned y){
-            if(ativo){
-                getSpriteObj().draw(screen, x, y);
-            }
-        } // Precisa de ajustes
+        virtual void draw(SpriteBase&, unsigned, unsigned);
     };
 
 #endif

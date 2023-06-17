@@ -3,13 +3,13 @@
 bool ObjetoDeJogo::colideCom(ObjetoDeJogo &obj) const{
     int colunaObjetoAtual = this->getColuna();
     int linhaObjetoAtual = this->getLinha();
-    int larguraObjetoAtual = this->spriteObj.getSprite()[0].size();
-    int alturaObjetoAtual = this->spriteObj.getSprite().size();
+    int larguraObjetoAtual = this->spriteObj->getSprite()[0].size();
+    int alturaObjetoAtual = this->spriteObj->getSprite().size();
 
     int colunaOutroObjeto = obj.getColuna();
     int linhaOutroObjeto = obj.getLinha();
-    int larguraOutroObjeto = obj.getSpriteObj().getSprite()[0].size();
-    int alturaOutroObjeto = obj.getSpriteObj().getSprite().size();
+    int larguraOutroObjeto = obj.getSpriteObj()->getSprite()[0].size();
+    int alturaOutroObjeto = obj.getSpriteObj()->getSprite().size();
     
     if(colunaObjetoAtual < colunaOutroObjeto + larguraOutroObjeto &&
         colunaOutroObjeto < colunaObjetoAtual + larguraObjetoAtual &&
@@ -33,7 +33,7 @@ void ObjetoDeJogo::moveLeft(){
 }
 
 void ObjetoDeJogo::moveRigth(){
-    int largura = this->spriteObj.getSprite()[0].size();
+    int largura = getSpriteObj()->getSprite()[0].size();
 
     if((this->coluna + 2 + largura) <= (GameBase::LARGURA_TELA() - 1)){
         moveTo(this->linha, this->coluna += 2);
@@ -41,7 +41,7 @@ void ObjetoDeJogo::moveRigth(){
 }
 
 void ObjetoDeJogo::moveDown(){
-    int altura = this->spriteObj.getSprite().size();
+    int altura = getSpriteObj()->getSprite().size();
 
     if((this->linha + 2 + altura) <= (GameBase::ALTURA_TELA() - 1)){
         moveTo(this->linha += 2, this->coluna);
@@ -59,7 +59,7 @@ void ObjetoDeJogo::setNome(std::string nome){
 }
 
 void ObjetoDeJogo::setSpriteObj(SpriteBase &sprite){
-    this->spriteObj = sprite;
+    this->spriteObj = &sprite;
 }
 
 void ObjetoDeJogo::setLinha(unsigned linha){
@@ -76,4 +76,12 @@ void ObjetoDeJogo::ativar(){
 
 void ObjetoDeJogo::desativar(){
     this->ativo = false;
+}
+
+// GAMEBASE
+
+void ObjetoDeJogo::draw(SpriteBase &base, unsigned x, unsigned y){
+    if(this->ativo){
+        spriteObj->draw(base, x, y);
+    }
 }

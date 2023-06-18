@@ -18,7 +18,7 @@ class Pessoa : public ObjetoDeJogo
         
         virtual ~Pessoa(){}
         
-        double getPeso() { return this->peso; }
+        double getPeso() const{ return this->peso; }
         void setPeso(double peso) { this->peso = peso; }
 
         void resgatar(){

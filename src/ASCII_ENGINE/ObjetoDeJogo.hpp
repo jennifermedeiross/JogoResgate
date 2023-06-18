@@ -9,17 +9,16 @@
 class ObjetoDeJogo : public GameBase
 {
     private:
-        std::string nome;
         SpriteBase *spriteObj;
         bool ativo;
         unsigned coluna, linha; //x e y, respectivamente
 
     public:
-        ObjetoDeJogo(std::string nome, Sprite sprite, unsigned coluna, unsigned linha) :
-            nome(nome), spriteObj(new Sprite(sprite)), coluna(coluna), linha(linha) {}
+        ObjetoDeJogo(Sprite sprite, unsigned coluna, unsigned linha) :
+            spriteObj(new Sprite(sprite)), coluna(coluna), linha(linha), ativo(true) {}
 
-        ObjetoDeJogo(std::string nome, SpriteAnimado sprite, unsigned coluna, unsigned linha) :
-            nome(nome), spriteObj(new SpriteAnimado(sprite)), coluna(coluna), linha(linha) {}
+        ObjetoDeJogo(SpriteAnimado sprite, unsigned coluna, unsigned linha) :
+            spriteObj(new SpriteAnimado(sprite)), coluna(coluna), linha(linha), ativo(true) {}
 
         virtual ~ObjetoDeJogo() { delete spriteObj; }
 
@@ -31,12 +30,10 @@ class ObjetoDeJogo : public GameBase
         void moveUp();
 
         // GETTERS E SETTERS
-        std::string getNome() const{ return this->nome; }
         SpriteBase *getSpriteObj(){ return this->spriteObj; }
         unsigned getLinha() const { return this->linha; }
         unsigned getColuna() const { return this->coluna; }
 
-        void setNome(std::string);
         void setSpriteObj(SpriteBase&);
         void setLinha(unsigned);
         void setColuna(unsigned);

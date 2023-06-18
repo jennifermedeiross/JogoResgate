@@ -54,10 +54,6 @@ void ObjetoDeJogo::moveUp(){
     }
 }
 
-void ObjetoDeJogo::setNome(std::string nome){
-    this->nome = nome;
-}
-
 void ObjetoDeJogo::setSpriteObj(SpriteBase &sprite){
     this->spriteObj = &sprite;
 }

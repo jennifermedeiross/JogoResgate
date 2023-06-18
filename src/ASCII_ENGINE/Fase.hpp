@@ -10,13 +10,26 @@
 class Fase : public GameBase
 {
     private:
-        SpriteBase background;
+        SpriteBase *background;
         std::list<ObjetoDeJogo*> listaObjetos;
 
     public:
-        Fase(/* args */);
-        ~Fase();
+        Fase(SpriteBase background, std::list<ObjetoDeJogo*>listaObjetos) :
+            background(new SpriteBase(background)), listaObjetos(listaObjetos){}
+        
+        virtual ~Fase() {}
 
+        void run(){}
+        void show(){}
+
+        // GETTERS E SETTERS
+        SpriteBase *getBackground(){ return this->background; }
+        std::list<ObjetoDeJogo*> getListaDeObjetos() { return this->listaObjetos; }
+
+        // GAMEBASE
+        virtual void init(){}
+        virtual void update(){}
+        virtual void draw(SpriteBase&, unsigned, unsigned){}
 };
 
 #endif

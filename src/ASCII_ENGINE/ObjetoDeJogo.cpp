@@ -1,5 +1,12 @@
 #include "ObjetoDeJogo.hpp"
 
+ObjetoDeJogo::ObjetoDeJogo(const ObjetoDeJogo &obj){
+    this->spriteObj = obj.spriteObj->copy();
+    this->coluna = obj.getColuna();
+    this->linha = obj.getLinha();
+    this->ativo = true;
+}
+
 bool ObjetoDeJogo::colideCom(ObjetoDeJogo &obj) const{
     int colunaObjetoAtual = this->getColuna();
     int linhaObjetoAtual = this->getLinha();

@@ -13,7 +13,7 @@ class Helicoptero : public ObjetoDeJogo
         Helicoptero(const ObjetoDeJogo & obj) :
             ObjetoDeJogo(obj), capacidade(2), tanque(20), tanqueMax(20) {}
 
-        Helicoptero(ObjetoDeJogo(&obj), unsigned capacidade, double tanque) :
+        Helicoptero(const ObjetoDeJogo(&obj), unsigned capacidade, double tanque) :
             ObjetoDeJogo(obj), capacidade(capacidade), tanque(tanque), tanqueMax(tanque) {}
         
         virtual ~Helicoptero(){}

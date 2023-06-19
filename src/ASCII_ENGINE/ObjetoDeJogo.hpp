@@ -14,10 +14,10 @@ class ObjetoDeJogo : public GameBase
         unsigned coluna, linha; //x e y, respectivamente
 
     public:
-        ObjetoDeJogo(Sprite &sprite, unsigned coluna, unsigned linha) :
+        ObjetoDeJogo(const Sprite &sprite, unsigned coluna, unsigned linha) :
             spriteObj(new Sprite(sprite)), coluna(coluna), linha(linha), ativo(true) {}
 
-        ObjetoDeJogo(SpriteAnimado &sprite, unsigned coluna, unsigned linha) :
+        ObjetoDeJogo(const SpriteAnimado &sprite, unsigned coluna, unsigned linha) :
             spriteObj(new SpriteAnimado(sprite)), coluna(coluna), linha(linha), ativo(true) {}
         
         ObjetoDeJogo(const ObjetoDeJogo &);

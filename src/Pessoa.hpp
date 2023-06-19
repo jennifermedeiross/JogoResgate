@@ -10,7 +10,7 @@ class Pessoa : public ObjetoDeJogo
         bool resgatada;
 
     public:
-        Pessoa(ObjetoDeJogo &obj, double peso) :
+        Pessoa(const ObjetoDeJogo &obj, double peso) :
             ObjetoDeJogo(obj), peso(peso), resgatada(false) {}
         
         virtual ~Pessoa(){}

@@ -6,7 +6,7 @@
 class Combustivel : public ObjetoDeJogo
 {   
     public:
-        Combustivel(ObjetoDeJogo & obj) :
+        Combustivel(const ObjetoDeJogo & obj) :
             ObjetoDeJogo(obj){}
         ~Combustivel(){}
 };

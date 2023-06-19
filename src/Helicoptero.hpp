@@ -10,7 +10,7 @@ class Helicoptero : public ObjetoDeJogo
         double tanque, tanqueMax;
 
     public:
-        Helicoptero(ObjetoDeJogo & obj) :
+        Helicoptero(const ObjetoDeJogo & obj) :
             ObjetoDeJogo(obj), capacidade(2), tanque(20), tanqueMax(20) {}
 
         Helicoptero(ObjetoDeJogo(&obj), unsigned capacidade, double tanque) :

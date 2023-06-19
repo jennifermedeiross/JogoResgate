@@ -33,6 +33,16 @@ STL
 
 - Sistema operacional Linux (Recomendado)
 - Compilador g++
+    ```
+      sudo apt-get update
+      sudo apt-get install g++
+    ```
+
+- mpg321
+    ```
+    sudo apt-get update
+    sudo apt-get install mpg321
+    ```
 
 ## Instalação
 

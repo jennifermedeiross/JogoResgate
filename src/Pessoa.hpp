@@ -10,11 +10,8 @@ class Pessoa : public ObjetoDeJogo
         bool resgatada;
 
     public:
-        Pessoa(Sprite sprite, double peso, unsigned x, unsigned y) :
-            ObjetoDeJogo(sprite, x, y), peso(peso), resgatada(false) {}
-
-        Pessoa(SpriteAnimado sprite, double peso, unsigned x, unsigned y) :
-            ObjetoDeJogo(sprite, x, y), peso(peso), resgatada(false) {}
+        Pessoa(ObjetoDeJogo &obj, double peso) :
+            ObjetoDeJogo(obj), peso(peso), resgatada(false) {}
         
         virtual ~Pessoa(){}
         
@@ -23,7 +20,6 @@ class Pessoa : public ObjetoDeJogo
 
         void resgatar(){
             this->resgatada = true;
-            this->desativar();
         }
 };
 

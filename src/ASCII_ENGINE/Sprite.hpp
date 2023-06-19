@@ -9,7 +9,8 @@ class Sprite : public SpriteBase {
         Sprite(std::string caminho) : 
             SpriteBase(caminho) {}
         virtual ~Sprite(){}
-    
+
+        virtual SpriteBase *copy();    
         virtual void draw(SpriteBase &screen, unsigned coluna, unsigned linha);
 
 };

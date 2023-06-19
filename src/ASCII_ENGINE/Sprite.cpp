@@ -1,5 +1,10 @@
 #include "Sprite.hpp"
 
+SpriteBase *Sprite::copy(){
+    return new Sprite(*this);
+}
+
+
 void Sprite::draw(SpriteBase &base, unsigned colunaDesejada, unsigned linhaDesejada){
     const std::vector<std::string> desenhoOrigem = this->getSprite();
     std::vector<std::string> desenhoDestino = base.getSprite();

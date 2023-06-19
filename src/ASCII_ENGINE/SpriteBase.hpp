@@ -21,6 +21,8 @@ class SpriteBase : public GameBase{
 
         void setCaminho(std::string);
         void setSprite(std::vector<std::string>);
+
+        virtual SpriteBase *copy() = 0;
         
         // GAMEBASE
         virtual void init(){}

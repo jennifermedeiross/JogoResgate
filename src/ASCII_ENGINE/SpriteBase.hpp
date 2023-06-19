@@ -25,7 +25,7 @@ class SpriteBase : public GameBase{
         // GAMEBASE
         virtual void init(){}
         virtual void update(){}
-        virtual void draw(SpriteBase&, unsigned, unsigned){}
+        virtual void draw(SpriteBase&, unsigned, unsigned) = 0;
 
 };
 

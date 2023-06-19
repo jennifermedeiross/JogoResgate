@@ -6,20 +6,15 @@
 class Helicoptero : public ObjetoDeJogo
 {
     private:
-        unsigned capacidade, tanque, tanqueMax;
+        unsigned capacidade;
+        double tanque, tanqueMax;
 
     public:
-        Helicoptero(Sprite sprite, unsigned x, unsigned y) :
-            ObjetoDeJogo(sprite, x, y), capacidade(2), tanque(20), tanqueMax(20) {}
+        Helicoptero(ObjetoDeJogo & obj) :
+            ObjetoDeJogo(obj), capacidade(2), tanque(20), tanqueMax(20) {}
 
-        Helicoptero(SpriteAnimado sprite, unsigned x, unsigned y) :
-            ObjetoDeJogo(sprite, x, y), capacidade(2), tanque(20), tanqueMax(20) {}
-
-        Helicoptero(Sprite sprite, unsigned capacidade, unsigned tanque, unsigned x, unsigned y) :
-            ObjetoDeJogo(sprite, x, y), capacidade(capacidade), tanque(tanque), tanqueMax(tanque) {}
-
-        Helicoptero(SpriteAnimado sprite, unsigned capacidade, unsigned tanque, unsigned x, unsigned y) :
-            ObjetoDeJogo(sprite, x, y), capacidade(capacidade), tanque(tanque), tanqueMax(tanque) {}
+        Helicoptero(ObjetoDeJogo(&obj), unsigned capacidade, double tanque) :
+            ObjetoDeJogo(obj), capacidade(capacidade), tanque(tanque), tanqueMax(tanque) {}
         
         virtual ~Helicoptero(){}
 
@@ -28,17 +23,15 @@ class Helicoptero : public ObjetoDeJogo
 
         // GETTERS E SETTERS
         unsigned getCapacidade() const{ return this->capacidade; }
-        unsigned getTanque() const{ return this->tanque; }
-        unsigned getTanqueMax() const { return this->tanqueMax; }
+        double getTanque() const{ return this->tanque; }
+        double getTanqueMax() const { return this->tanqueMax; }
 
         void setCapacidade(unsigned);
-        void setTanque(unsigned);
-        void setTanqueMax(unsigned);
+        void setTanque(double);
+        void setTanqueMax(double);
 
         // GAMEBASE
-        void update();
-
-        
+        virtual void update();        
 };
 
 #endif

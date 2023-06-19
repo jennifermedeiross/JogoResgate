@@ -1,6 +1,6 @@
 #include "Helicoptero.hpp"
 
-void Helicoptero::resgate(){
+void Helicoptero::resgate(){ // mudar aqui para voltar depois
     if(this->getCapacidade() > 0)
         this->capacidade -= 1;
 }
@@ -10,6 +10,8 @@ void Helicoptero::abastecer(){
 
     if(limite < getTanqueMax()){
         setTanque(limite);
+    } else {
+        setTanque(getTanqueMax());
     }
 }
 
@@ -17,11 +19,11 @@ void Helicoptero::setCapacidade(unsigned capacidade){
     this->capacidade = capacidade;
 }
 
-void Helicoptero::setTanque(unsigned tanque){
+void Helicoptero::setTanque(double tanque){
     this->tanque = tanque;
 }
 
-void Helicoptero::setTanqueMax(unsigned max){
+void Helicoptero::setTanqueMax(double max){
     this->tanqueMax = max;
 }
 

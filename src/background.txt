@@ -2,21 +2,43 @@
 #include "./Sprite.hpp"
 
 int main() {
+    system("clear");
     Sprite screen("src/imgs/screen.txt");
     Sprite arvore("src/imgs/arvore.txt");
-    Sprite nuvem("src/imgs/nuvem.txt");
+    Sprite nuvens1("src/imgs/nuvens1.txt");
+    Sprite nuvens2("src/imgs/nuvens2.txt");
     Sprite plataformas("src/imgs/plataformas.txt");
     Sprite cacto("src/imgs/cacto.txt");
 
     plataformas.draw(screen, 1, 13); // coluna x linha
-    arvore.draw(screen, 2, 22);
-    nuvem.draw(screen, 130, 6);
-    nuvem.draw(screen, 140, 8);
-    nuvem.draw(screen, 115, 9);
-    nuvem.draw(screen, 78, 36);
-    nuvem.draw(screen, 88, 39);
+    arvore.draw(screen, 1, 22);
+    nuvens1.draw(screen, 115, 6);
+    nuvens2.draw(screen, 78, 36);
     cacto.draw(screen, 25, 6);
     cacto.draw(screen, 150, 20);
+
+    Combustivel combustivel(ObjetoDeJogo(Sprite("src/imgs/combustivel.txt"), 35, 29));
+    combustivel.draw(screen, combustivel.getColuna(), combustivel.getLinha());
+
+    Base base(ObjetoDeJogo(Sprite("src/imgs/base.txt"), 150, 42));
+    base.draw(screen, base.getColuna(), base.getLinha());
+
+    screen.imprimir();
+
+    // POSIÇÃO DAS PESSOAS NA PLATAFORMAS
+    pessoa.draw(screen, 70, 7);
+    pessoa.draw(screen, 100, 21);
+    pessoa.draw(screen, 130, 21);
+    pessoa.draw(screen, 30, 31);
+    pessoa.draw(screen, 60, 39);
+
+    // POSIÇÃO DAS PESSOAS NA BASE
+    pessoa.draw(screen, 131, 35);
+    pessoa.draw(screen, 137, 35);
+    pessoa.draw(screen, 143, 35);
+    pessoa.draw(screen, 149, 35);
+    pessoa.draw(screen, 155, 35);
+    pessoa.draw(screen, 161, 35);
 
     return 0;
 }

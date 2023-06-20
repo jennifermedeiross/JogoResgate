@@ -14,6 +14,14 @@ void Fase::draw(SpriteBase &screen, unsigned x, unsigned y){
     }
 }
 
+void Fase::update(){
+    background->update();
+
+    for (auto it = listaObjetos.begin(); it != listaObjetos.end(); ++it){
+        (*it)->update();
+    }
+}
+
 void Fase::setBackground(SpriteBase *bkg){
     this->background = bkg->copy();
 }

@@ -35,6 +35,7 @@ class ObjetoDeJogo : public GameBase
         SpriteBase *getSpriteObj(){ return this->spriteObj; }
         unsigned getLinha() const { return this->linha; }
         unsigned getColuna() const { return this->coluna; }
+        bool getAtivo() const { return this->ativo; }
 
         void setSpriteObj(SpriteBase&);
         void setLinha(unsigned);

@@ -6,6 +6,7 @@
 #include "Sprite.hpp"
 #include "SpriteAnimado.hpp"
 #include "ObjetoDeJogo.hpp"
+#include "Sound.hpp"
 
 class Fase : public GameBase
 {
@@ -30,7 +31,7 @@ class Fase : public GameBase
 
         // GAMEBASE
         virtual void init() = 0;
-        virtual void update(){}
+        virtual void update();
         virtual void draw(SpriteBase&, unsigned, unsigned);
 };
 

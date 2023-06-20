@@ -75,10 +75,12 @@ void ObjetoDeJogo::setColuna(unsigned coluna){
 
 void ObjetoDeJogo::ativar(){
     this->ativo = true;
+    update();
 }
 
 void ObjetoDeJogo::desativar(){
     this->ativo = false;
+    update();
 }
 
 // GAMEBASE

@@ -4,6 +4,8 @@ void FaseGame::run(){
     Sprite screen("src/imgs/screen.txt");
     Sound somGame("src/musics/game.mp3");
     Sound abasteceu("src/musics/abasteceu.mp3");
+    Sound resgatou("src/musics/salvou.mp3");
+    Sound colocouBase("src/musics/base.mp3");
 
     init();
     somGame.playloop();
@@ -11,7 +13,9 @@ void FaseGame::run(){
     while (true) {
         
         system("clear");
-        std::cout << "TANQUE: " << pHelicoptero->getTanque() << "         CAPACIDADE: " << pHelicoptero->getCapacidade()<< std::endl;
+        std::cout << "TANQUE: " << pHelicoptero->getTanque() << 
+        "         CAPACIDADE: " << pHelicoptero->getCapacidade()<< 
+        "         CAPACIDADE MÁXIMA: " << pHelicoptero->getCapacidadeMax() <<std::endl;
         draw(screen, 0 ,0);
         show(&screen);
         char entrada = teclado.getch();
@@ -47,76 +51,83 @@ void FaseGame::run(){
 
             //PESSOA 1
             else if(pHelicoptero->colideCom(*pPessoa1)){
-                if(pHelicoptero->getCapacidade() > 0){
+                if(pHelicoptero->getCapacidade() > 0 && !(pPessoa1->getResgatada())){
                     pHelicoptero->resgate();
                     pPessoa1->desativar();
                     pPessoa1->setColuna(131);
                     pPessoa1->setLinha(35);
+                    pPessoa1->resgatarPessoa();
+                    resgatou.play();
                 }
             }
             //PESSOA 2
-            else if(pHelicoptero->colideCom(*pPessoa2)){
+            else if(pHelicoptero->colideCom(*pPessoa2) && !(pPessoa2->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->resgate();
                     pPessoa2->desativar();
                     pPessoa2->setColuna(131);
                     pPessoa2->setLinha(35);
+                    pPessoa2->resgatarPessoa();
+                    resgatou.play();
                 }
             }
             //PESSOA 3
-            else if(pHelicoptero->colideCom(*pPessoa3)){
+            else if(pHelicoptero->colideCom(*pPessoa3) && !(pPessoa3->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->resgate();
                     pPessoa3->desativar();
                     pPessoa3->setColuna(137);
                     pPessoa3->setLinha(35);
+                    pPessoa3->resgatarPessoa();
+                    resgatou.play();
                 }
             }
             // PESSOA 4
-            else if(pHelicoptero->colideCom(*pPessoa4)){
+            else if(pHelicoptero->colideCom(*pPessoa4) && !(pPessoa4->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->resgate();
                     pPessoa4->desativar();
                     pPessoa4->setColuna(143);
                     pPessoa4->setLinha(35);
+                    pPessoa4->resgatarPessoa();
+                    resgatou.play();
                 }
             }
             //PESSOA 5
-            else if(pHelicoptero->colideCom(*pPessoa5)){
+            else if(pHelicoptero->colideCom(*pPessoa5) && !(pPessoa5->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->resgate();
                     pPessoa5->desativar();
                     pPessoa5->setColuna(149);
                     pPessoa5->setLinha(35);
+                    pPessoa5->resgatarPessoa();
+                    resgatou.play();
                 }
             }
             //PESSOA 6
-            else if(pHelicoptero->colideCom(*pPessoa6)){
+            else if(pHelicoptero->colideCom(*pPessoa6) && !(pPessoa6->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->resgate();
                     pPessoa6->desativar();
                     pPessoa6->setColuna(156);
                     pPessoa6->setLinha(35);
+                    pPessoa6->resgatarPessoa();
+                    resgatou.play();
                 }
             }
 
             //BASE
-            else if(pHelicoptero->colideCom(*pBase)  ){
+            else if(pHelicoptero->colideCom(*pBase)){
+                pHelicoptero->setCapacidade(pHelicoptero->getCapacidadeMax());
+
+                if (pPessoa1->getAtivo() == false) pPessoa1->ativar();
+                if (pPessoa2->getAtivo() == false) pPessoa2->ativar();
+                if (pPessoa3->getAtivo() == false) pPessoa3->ativar();
+                if (pPessoa4->getAtivo() == false) pPessoa4->ativar();
+                if (pPessoa5->getAtivo() == false) pPessoa5->ativar();
+                if (pPessoa6->getAtivo() == false) pPessoa6->ativar();
                 
-                int diferenca = pHelicoptero->getCapacidadeMax() - pHelicoptero->getCapacidade();
-                
-                pHelicoptero->setCapacidade(pHelicoptero->getCapacidade() + diferenca);
-
-                // if (pPessoa1->getAtivo() == false) pPessoa1->ativar();
-                // if (pPessoa2->getAtivo() == false) pPessoa2->ativar();
-                // if (pPessoa3->getAtivo() == false) pPessoa3->ativar();
-                // if (pPessoa4->getAtivo() == false) pPessoa4->ativar();
-                // if (pPessoa5->getAtivo() == false) pPessoa5->ativar();
-                // if (pPessoa6->getAtivo() == false) pPessoa6->ativar();
-
-                // draw(screen, 0 ,0);
-
-                // update();
+                colocouBase.play();
             }
         }
 

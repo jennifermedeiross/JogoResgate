@@ -14,22 +14,24 @@ class Fase : public GameBase
         std::list<ObjetoDeJogo*> listaObjetos;
 
     public:
-        Fase(SpriteBase background, std::list<ObjetoDeJogo*>listaObjetos) :
-            background(new SpriteBase(background)), listaObjetos(listaObjetos){}
+        Fase(){}
         
-        virtual ~Fase() {}
+        virtual ~Fase() { delete background; }
 
-        void run(){}
-        void show(){}
+        virtual void run() = 0;
+        void show(SpriteBase *);
 
         // GETTERS E SETTERS
         SpriteBase *getBackground(){ return this->background; }
         std::list<ObjetoDeJogo*> getListaDeObjetos() { return this->listaObjetos; }
 
+        void setBackground(SpriteBase *);
+        void setListaObjetos(std::list<ObjetoDeJogo*>);
+
         // GAMEBASE
-        virtual void init(){}
+        virtual void init() = 0;
         virtual void update(){}
-        virtual void draw(SpriteBase&, unsigned, unsigned){}
+        virtual void draw(SpriteBase&, unsigned, unsigned);
 };
 
 #endif

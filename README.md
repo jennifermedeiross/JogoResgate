@@ -63,7 +63,7 @@ STL
   2. Modifique o primeiro parâmetro do script de acordo com o compilador desejado.
 
 ## Objetivo
-O objetivo do jogo é resgatar 5 pessoas em perigo usando um helicóptero (herói). (O resgate é concluído quando uma pessoa entra no helicóptero e é deixada na base) <br/><br/>
+O objetivo do jogo é resgatar 6 pessoas em perigo usando um helicóptero (herói). (O resgate é concluído quando uma pessoa entra no helicóptero e é deixada na base) <br/><br/>
 **Vítória:** Todas as pessoas foram resgatas. <br/>
 **Derrota:** Combustível chegou ao fim e as pessoas não foram salvas.
 

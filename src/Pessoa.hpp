@@ -18,9 +18,9 @@ class Pessoa : public ObjetoDeJogo
         double getPeso() const{ return this->peso; }
         void setPeso(double peso) { this->peso = peso; }
 
-        void resgatar(){
-            this->resgatada = true;
-        }
+        bool getResgatada()const { return this->resgatada; }
+        void resgatarPessoa() { this->resgatada = true; }
+
 };
 
 #endif

@@ -10,8 +10,9 @@ class SpriteAnimado : public SpriteBase {
 
         virtual ~SpriteAnimado(){}
 
-        virtual SpriteBase *copy(){ return this; } 
-        
+        virtual SpriteBase *copy(){ return this; }
+
+        virtual void update(){}     
         virtual void draw(SpriteBase &screen, unsigned coluna, unsigned linha){}
 
 };

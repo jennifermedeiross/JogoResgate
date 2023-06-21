@@ -12,7 +12,7 @@ class Helicoptero : public ObjetoDeJogo
 
     public:
         Helicoptero(const ObjetoDeJogo &obj) :
-            ObjetoDeJogo(obj), capacidade(2), capacidadeMax(2), tanque(500), tanqueMax(500), peso(200), pesoMax(200) {}
+            ObjetoDeJogo(obj), capacidade(2), capacidadeMax(2), tanque(600), tanqueMax(600), peso(150), pesoMax(150) {}
 
         Helicoptero(const ObjetoDeJogo &obj, unsigned capacidade, double tanque, double peso) :
             ObjetoDeJogo(obj), capacidade(capacidade), capacidadeMax(capacidade), tanque(tanque), tanqueMax(tanque), peso(peso), pesoMax(peso) {}

@@ -15,7 +15,7 @@ void FaseGame::run(){
         system("clear");
         std::cout << "TANQUE: " << pHelicoptero->getTanque() << 
         "         CAPACIDADE: " << pHelicoptero->getCapacidade()<< 
-        "         CAPACIDADE MÁXIMA: " << pHelicoptero->getCapacidadeMax() <<std::endl;
+        "         PESO: " << pHelicoptero->getPeso() <<std::endl;
         draw(screen, 0 ,0);
         show(&screen);
         char entrada = teclado.getch();
@@ -52,66 +52,42 @@ void FaseGame::run(){
             //PESSOA 1
             else if(pHelicoptero->colideCom(*pPessoa1)){
                 if(pHelicoptero->getCapacidade() > 0 && !(pPessoa1->getResgatada())){
-                    pHelicoptero->resgate();
-                    pPessoa1->desativar();
-                    pPessoa1->setColuna(131);
-                    pPessoa1->setLinha(35);
-                    pPessoa1->resgatarPessoa();
+                    pHelicoptero->processoDeResgate(*pPessoa1, 131, 35);
                     resgatou.play();
                 }
             }
             //PESSOA 2
             else if(pHelicoptero->colideCom(*pPessoa2) && !(pPessoa2->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->resgate();
-                    pPessoa2->desativar();
-                    pPessoa2->setColuna(131);
-                    pPessoa2->setLinha(35);
-                    pPessoa2->resgatarPessoa();
+                    pHelicoptero->processoDeResgate(*pPessoa2, 137, 35);
                     resgatou.play();
                 }
             }
             //PESSOA 3
             else if(pHelicoptero->colideCom(*pPessoa3) && !(pPessoa3->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->resgate();
-                    pPessoa3->desativar();
-                    pPessoa3->setColuna(137);
-                    pPessoa3->setLinha(35);
-                    pPessoa3->resgatarPessoa();
+                    pHelicoptero->processoDeResgate(*pPessoa3, 143, 35);
                     resgatou.play();
                 }
             }
             // PESSOA 4
             else if(pHelicoptero->colideCom(*pPessoa4) && !(pPessoa4->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->resgate();
-                    pPessoa4->desativar();
-                    pPessoa4->setColuna(143);
-                    pPessoa4->setLinha(35);
-                    pPessoa4->resgatarPessoa();
+                    pHelicoptero->processoDeResgate(*pPessoa4, 149, 35);
                     resgatou.play();
                 }
             }
             //PESSOA 5
             else if(pHelicoptero->colideCom(*pPessoa5) && !(pPessoa5->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->resgate();
-                    pPessoa5->desativar();
-                    pPessoa5->setColuna(149);
-                    pPessoa5->setLinha(35);
-                    pPessoa5->resgatarPessoa();
+                    pHelicoptero->processoDeResgate(*pPessoa5, 155, 35);
                     resgatou.play();
                 }
             }
             //PESSOA 6
             else if(pHelicoptero->colideCom(*pPessoa6) && !(pPessoa6->getResgatada())){
                 if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->resgate();
-                    pPessoa6->desativar();
-                    pPessoa6->setColuna(156);
-                    pPessoa6->setLinha(35);
-                    pPessoa6->resgatarPessoa();
+                    pHelicoptero->processoDeResgate(*pPessoa6, 161, 35);
                     resgatou.play();
                 }
             }
@@ -119,6 +95,7 @@ void FaseGame::run(){
             //BASE
             else if(pHelicoptero->colideCom(*pBase)){
                 pHelicoptero->setCapacidade(pHelicoptero->getCapacidadeMax());
+                pHelicoptero->setPeso(pHelicoptero->getPesoMax());
 
                 if (pPessoa1->getAtivo() == false) pPessoa1->ativar();
                 if (pPessoa2->getAtivo() == false) pPessoa2->ativar();

@@ -7,6 +7,8 @@
 #include "Combustivel.hpp"
 #include "Base.hpp"
 #include "Pessoa.hpp"
+#include <iomanip>
+#include <string>
 
 class FaseGame : public Fase
 {
@@ -24,10 +26,10 @@ class FaseGame : public Fase
         Pessoa *pPessoa6;
 
     public:
-        FaseGame(){}
+        FaseGame(std::string state) : Fase(state){}
         virtual ~FaseGame(){}
 
-        void informa();
+        void informa(int, int, int, int, int, int);
 
         virtual void run();
 

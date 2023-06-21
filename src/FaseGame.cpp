@@ -13,12 +13,18 @@ void FaseGame::run(){
     while (true) {
         
         system("clear");
-        std::cout << "TANQUE: " << pHelicoptero->getTanque() << 
-        "         CAPACIDADE: " << pHelicoptero->getCapacidade()<< 
-        "         PESO: " << pHelicoptero->getPeso() <<std::endl;
+        informa(pHelicoptero->getTanque(), pHelicoptero->getTanqueMax(),
+                pHelicoptero->getCapacidade(), pHelicoptero->getCapacidadeMax(),
+                pHelicoptero->getPeso(), pHelicoptero->getPesoMax());
+
         draw(screen, 0 ,0);
         show(&screen);
         char entrada = teclado.getch();
+
+        if(pHelicoptero->getTanque() == 0){
+            this->setState("GameOver");
+            break;
+        }
 
 
         if(entrada == 'w' || entrada == 'W'){ 
@@ -41,7 +47,8 @@ void FaseGame::run(){
             update();
         }
 
-        if(entrada == 'x' || entrada == 'X'){ 
+        if(entrada == 'x' || entrada == 'X'){
+            update();
 
             //COMBUSTIVEL
             if(pHelicoptero->colideCom(*pCombustivel)){
@@ -50,42 +57,65 @@ void FaseGame::run(){
             }
 
             //PESSOA 1
-            else if(pHelicoptero->colideCom(*pPessoa1)){
-                if(pHelicoptero->getCapacidade() > 0 && !(pPessoa1->getResgatada())){
+            else if(pHelicoptero->colideCom(*pPessoa1) && 
+                !(pPessoa1->getResgatada()) &&
+                pHelicoptero->getPeso() > pPessoa1->getPeso()){
+
+                if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->processoDeResgate(*pPessoa1, 131, 35);
                     resgatou.play();
                 }
             }
+            
             //PESSOA 2
-            else if(pHelicoptero->colideCom(*pPessoa2) && !(pPessoa2->getResgatada())){
+            else if(pHelicoptero->colideCom(*pPessoa2) && 
+                !(pPessoa2->getResgatada()) &&
+                pHelicoptero->getPeso() > pPessoa2->getPeso()){
+
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->processoDeResgate(*pPessoa2, 137, 35);
                     resgatou.play();
                 }
             }
+
             //PESSOA 3
-            else if(pHelicoptero->colideCom(*pPessoa3) && !(pPessoa3->getResgatada())){
+            else if(pHelicoptero->colideCom(*pPessoa3) && 
+                !(pPessoa3->getResgatada()) &&
+                pHelicoptero->getPeso() > pPessoa3->getPeso()){
+
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->processoDeResgate(*pPessoa3, 143, 35);
                     resgatou.play();
                 }
             }
+
             // PESSOA 4
-            else if(pHelicoptero->colideCom(*pPessoa4) && !(pPessoa4->getResgatada())){
+            else if(pHelicoptero->colideCom(*pPessoa4) && 
+                !(pPessoa4->getResgatada()) &&
+                pHelicoptero->getPeso() > pPessoa4->getPeso()){
+
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->processoDeResgate(*pPessoa4, 149, 35);
                     resgatou.play();
                 }
             }
+
             //PESSOA 5
-            else if(pHelicoptero->colideCom(*pPessoa5) && !(pPessoa5->getResgatada())){
+            else if(pHelicoptero->colideCom(*pPessoa5) && 
+                !(pPessoa5->getResgatada()) &&
+                pHelicoptero->getPeso() > pPessoa5->getPeso()){
+
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->processoDeResgate(*pPessoa5, 155, 35);
                     resgatou.play();
                 }
             }
+
             //PESSOA 6
-            else if(pHelicoptero->colideCom(*pPessoa6) && !(pPessoa6->getResgatada())){
+            else if(pHelicoptero->colideCom(*pPessoa6) && 
+                !(pPessoa6->getResgatada()) &&
+                pHelicoptero->getPeso() > pPessoa6->getPeso()){
+
                 if(pHelicoptero->getCapacidade() > 0){
                     pHelicoptero->processoDeResgate(*pPessoa6, 161, 35);
                     resgatou.play();
@@ -109,6 +139,7 @@ void FaseGame::run(){
         }
 
         else if(entrada == 'q' || entrada == 'Q'){ 
+            this->setState("FaseMenu");
             break;
         }
 
@@ -130,7 +161,6 @@ void FaseGame::init(){
     Sprite cacto("src/imgs/cacto.txt");
     Sprite pessoa("src/imgs/pessoa.txt");
 
-    informativo.draw(screen, 0, 0);
     plataformas.draw(screen, 1, 13);
     arvore.draw(screen, 1, 22);
     nuvens1.draw(screen, 115, 6);
@@ -164,6 +194,19 @@ void FaseGame::init(){
     this->setListaObjetos(lista);
 }
 
-void FaseGame::informa(){
-    std::cout << "TAQUE: " << pHelicoptero->getTanque();
+void FaseGame::informa(int tanque, int tanqueMax, int capacidade, int capacidadeMax, int peso, int pesoMax){
+    std::string tanqueStr = "TANQUE: " + std::to_string(tanque) + "/" + std::to_string(tanqueMax);
+    std::string capacidadeStr = "CAPACIDADE: " + std::to_string(capacidade) + "/" + std::to_string(capacidadeMax);
+    std::string pesoStr = "PESO: " + std::to_string(peso) + "/" + std::to_string(pesoMax);
+
+    int totalWidth = (180 / 3) - 3;
+
+    auto printLinha = [totalWidth](const std::string& leftText, const std::string& middleText, const std::string& rightText) {
+        std::cout << "| " << std::setw(totalWidth) << std::left << leftText
+                  << "| " << std::setw(totalWidth) << std::left << middleText
+                  << "| " << std::setw(totalWidth) << std::left << rightText << " |" << std::endl;
+    };
+
+    printLinha(tanqueStr, capacidadeStr, pesoStr);
 }
+

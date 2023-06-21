@@ -19,7 +19,7 @@ void FaseGame::run(){
 
         draw(screen, 0 ,0);
         show(&screen);
-        char entrada = teclado.getch();
+        char entrada = getTeclado().getch();
 
         if(pHelicoptero->getTanque() == 0){
             this->setState("GameOver");

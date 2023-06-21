@@ -7,10 +7,12 @@
 #include "SpriteAnimado.hpp"
 #include "ObjetoDeJogo.hpp"
 #include "Sound.hpp"
+#include "Teclado.hpp"
 
 class Fase : public GameBase
 {
     private:
+        Teclado teclado; // manipulação do teclado
         SpriteBase *background;
         std::list<ObjetoDeJogo*> listaObjetos;
         std::string STATE; // deve ser o nome exato da classe derivada
@@ -24,6 +26,7 @@ class Fase : public GameBase
         void show(SpriteBase *);
 
         // GETTERS E SETTERS
+        Teclado getTeclado() const { return this->teclado; }
         SpriteBase *getBackground(){ return this->background; }
         std::list<ObjetoDeJogo*> getListaDeObjetos() { return this->listaObjetos; }
         std::string faseState() const { return this->STATE; }

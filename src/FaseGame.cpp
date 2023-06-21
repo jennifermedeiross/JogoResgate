@@ -2,10 +2,12 @@
 
 void FaseGame::run(){
     Sprite screen("src/imgs/screen.txt");
+    Sprite gameOver("src/imgs/gameOver.txt");
     Sound somGame("src/musics/game.mp3");
     Sound abasteceu("src/musics/abasteceu.mp3");
     Sound resgatou("src/musics/salvou.mp3");
     Sound colocouBase("src/musics/base.mp3");
+    Sound somGameOver("src/musics/gameover.mp3");
 
     init();
     somGame.playloop();
@@ -23,7 +25,15 @@ void FaseGame::run(){
 
         if(pHelicoptero->getTanque() == 0){
             this->setState("GameOver");
+            system("clear");
+            informa(0, 0, 0, 0, 0, 0);
+            gameOver.draw(screen, 45 , 23);
+            show(&screen);
+            somGame.pause();
+            somGameOver.play();
+            sleep(5);
             break;
+
         }
 
 

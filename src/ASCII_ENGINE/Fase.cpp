@@ -1,5 +1,9 @@
 #include "Fase.hpp"
 
+void Fase::setState(std::string state){
+    this->STATE = state;
+}
+
 void Fase::show(SpriteBase *screen){
     for (std::string  linha : screen->getSprite()){
         std::cout << linha << std::endl;

@@ -16,6 +16,19 @@ void Helicoptero::abastecer(){
     }
 }
 
+void Helicoptero::subtrairPeso(int peso){
+    this->peso -= peso;
+}
+
+void Helicoptero::processoDeResgate(Pessoa &pessoa, int novaC, int novaL){
+    resgate();
+    subtrairPeso(pessoa.getPeso());
+    pessoa.desativar();
+    pessoa.setColuna(novaC);
+    pessoa.setLinha(novaL);
+    pessoa.resgatarPessoa();
+}
+
 void Helicoptero::setCapacidade(unsigned capacidade){
     this->capacidade = capacidade;
 }
@@ -32,8 +45,17 @@ void Helicoptero::setTanqueMax(double max){
     this->tanqueMax = max;
 }
 
+void Helicoptero::setPeso(double peso){
+    this->peso = peso;
+}
+
+void Helicoptero::setPesoMax(double max){
+    this->pesoMax = max;
+}
+
+
 // GAMEBASE
 void Helicoptero::update(){
-    this->tanque -= 5;
+    if(this->tanque > 0) this->tanque -= 5;
     this->ObjetoDeJogo::update();
 }

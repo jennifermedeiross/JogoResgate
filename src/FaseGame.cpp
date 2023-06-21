@@ -152,7 +152,6 @@ void FaseGame::run(){
 
 void FaseGame::init(){
 
-    Sprite informativo("src/imgs/informativos.txt");
     Sprite screen("src/imgs/screen.txt");
     Sprite arvore("src/imgs/arvore.txt");
     Sprite nuvens1("src/imgs/nuvens1.txt");

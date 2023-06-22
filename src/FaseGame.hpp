@@ -26,7 +26,7 @@ class FaseGame : public Fase
         FaseGame(std::string state) : Fase(state){}
         virtual ~FaseGame(){}
 
-        void informa(int, int, int, int, int, int);
+        void informativo(int, int, int, int, int, int);
 
         virtual void run();
 

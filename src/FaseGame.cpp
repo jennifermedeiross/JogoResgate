@@ -3,19 +3,23 @@
 void FaseGame::run(){
     Sprite screen("src/imgs/screen.txt");
     Sprite gameOver("src/imgs/gameOver.txt");
+    Sprite gameWin("src/imgs/gameWin.txt");
     Sound somGame("src/musics/game.mp3");
+    Sound somGameOver("src/musics/gameover.mp3");
+    Sound somVitoria("src/musics/vitoria.mp3");
     Sound abasteceu("src/musics/abasteceu.mp3");
     Sound resgatou("src/musics/salvou.mp3");
     Sound colocouBase("src/musics/base.mp3");
-    Sound somGameOver("src/musics/gameover.mp3");
 
     init();
     somGame.playloop();
 
+    int qntResgatado = 0;
+
     while (true) {
         
         system("clear");
-        informa(pHelicoptero->getTanque(), pHelicoptero->getTanqueMax(),
+        informativo(pHelicoptero->getTanque(), pHelicoptero->getTanqueMax(),
                 pHelicoptero->getCapacidade(), pHelicoptero->getCapacidadeMax(),
                 pHelicoptero->getPeso(), pHelicoptero->getPesoMax());
 
@@ -24,17 +28,39 @@ void FaseGame::run(){
         char entrada = getTeclado().getch();
 
         if(pHelicoptero->getTanque() == 0){
-            this->setState("GameOver");
             system("clear");
-            informa(0, 0, 0, 0, 0, 0);
-            gameOver.draw(screen, 45 , 23);
+            informativo(pHelicoptero->getTanque(), pHelicoptero->getTanqueMax(),
+                pHelicoptero->getCapacidade(), pHelicoptero->getCapacidadeMax(),
+                pHelicoptero->getPeso(), pHelicoptero->getPesoMax());
+            gameOver.draw(screen, 35 , 15);
             show(&screen);
             somGame.pause();
             somGameOver.play();
             sleep(5);
             break;
-
         }
+
+        if (qntResgatado == 6){
+            system("clear");
+            informativo(pHelicoptero->getTanque(), pHelicoptero->getTanqueMax(),
+                pHelicoptero->getCapacidade(), pHelicoptero->getCapacidadeMax(),
+                pHelicoptero->getPeso(), pHelicoptero->getPesoMax());
+            gameWin.draw(screen, 35 , 15);
+            show(&screen);
+            somGame.pause();
+            somVitoria.play();
+            sleep(10);
+            break;
+        }
+
+        else if(entrada == 'q' || entrada == 'Q'){ 
+            this->setState("FaseMenu");
+            break;
+        }
+
+        else if (entrada == '\n'){
+            update();
+        }   
 
 
         if(entrada == 'w' || entrada == 'W'){ 
@@ -137,25 +163,40 @@ void FaseGame::run(){
                 pHelicoptero->setCapacidade(pHelicoptero->getCapacidadeMax());
                 pHelicoptero->setPeso(pHelicoptero->getPesoMax());
 
-                if (pPessoa1->getAtivo() == false) pPessoa1->ativar();
-                if (pPessoa2->getAtivo() == false) pPessoa2->ativar();
-                if (pPessoa3->getAtivo() == false) pPessoa3->ativar();
-                if (pPessoa4->getAtivo() == false) pPessoa4->ativar();
-                if (pPessoa5->getAtivo() == false) pPessoa5->ativar();
-                if (pPessoa6->getAtivo() == false) pPessoa6->ativar();
+                if (pPessoa1->getAtivo() == false) {
+                    pPessoa1->ativar();
+                    qntResgatado ++;
+                }
+
+                if (pPessoa2->getAtivo() == false) {
+                    pPessoa2->ativar();
+                    qntResgatado ++;
+                }
+
+                if (pPessoa3->getAtivo() == false) {
+                    pPessoa3->ativar();
+                    qntResgatado ++;
+                }
+
+                if (pPessoa4->getAtivo() == false) {
+                    pPessoa4->ativar();
+                    qntResgatado ++;
+                }
+
+                if (pPessoa5->getAtivo() == false) {
+                    pPessoa5->ativar();
+                    qntResgatado ++;
+                }
+
+                if (pPessoa6->getAtivo() == false) {
+                    pPessoa6->ativar();
+                    qntResgatado ++;
+                }
                 
                 colocouBase.play();
             }
         }
-
-        else if(entrada == 'q' || entrada == 'Q'){ 
-            this->setState("FaseMenu");
-            break;
-        }
-
-        else if (entrada == '\n'){
-            update();
-        }   
+        
 
     }
 }
@@ -163,6 +204,7 @@ void FaseGame::run(){
 void FaseGame::init(){
 
     Sprite screen("src/imgs/screen.txt");
+    Sprite informacoes("src/imgs/informacoes.txt");
     Sprite arvore("src/imgs/arvore.txt");
     Sprite nuvens1("src/imgs/nuvens1.txt");
     Sprite nuvens2("src/imgs/nuvens2.txt");
@@ -170,6 +212,7 @@ void FaseGame::init(){
     Sprite cacto("src/imgs/cacto.txt");
     Sprite pessoa("src/imgs/pessoa.txt");
 
+    informacoes.draw(screen, 143, 0);
     plataformas.draw(screen, 1, 13);
     arvore.draw(screen, 1, 22);
     nuvens1.draw(screen, 115, 6);
@@ -179,12 +222,12 @@ void FaseGame::init(){
 
     this->setBackground(&screen);
 
-    pPessoa1 = new Pessoa(ObjetoDeJogo(Sprite("src/imgs/pessoa.txt"), 70, 7), 70.00);
-    pPessoa2 = new Pessoa(ObjetoDeJogo(Sprite("src/imgs/pessoa.txt"), 50, 7), 60.00);
-    pPessoa3 = new Pessoa(ObjetoDeJogo(Sprite("src/imgs/pessoa.txt"), 110, 21), 60.00);
-    pPessoa4 = new Pessoa(ObjetoDeJogo(Sprite("src/imgs/pessoa.txt"), 130, 21), 80.00);
-    pPessoa5 = new Pessoa(ObjetoDeJogo(Sprite("src/imgs/pessoa.txt"), 80, 21), 90.00);
-    pPessoa6 = new Pessoa(ObjetoDeJogo(Sprite("src/imgs/pessoa.txt"), 60, 39), 50.00);
+    pPessoa1 = new Pessoa(ObjetoDeJogo(pessoa, 70, 7), 70.00);
+    pPessoa2 = new Pessoa(ObjetoDeJogo(pessoa, 50, 7), 60.00);
+    pPessoa3 = new Pessoa(ObjetoDeJogo(pessoa, 110, 21), 60.00);
+    pPessoa4 = new Pessoa(ObjetoDeJogo(pessoa, 130, 21), 80.00);
+    pPessoa5 = new Pessoa(ObjetoDeJogo(pessoa, 80, 21), 90.00);
+    pPessoa6 = new Pessoa(ObjetoDeJogo(pessoa, 60, 39), 50.00);
     pHelicoptero = new Helicoptero(ObjetoDeJogo(Sprite("src/imgs/helicopteroGame.txt"), 0, 4));
     pCombustivel = new Combustivel(ObjetoDeJogo(Sprite("src/imgs/combustivel.txt"), 35, 29));
     pBase = new Base(ObjetoDeJogo(Sprite("src/imgs/base.txt"), 130, 42));
@@ -203,19 +246,16 @@ void FaseGame::init(){
     this->setListaObjetos(lista);
 }
 
-void FaseGame::informa(int tanque, int tanqueMax, int capacidade, int capacidadeMax, int peso, int pesoMax){
-    std::string tanqueStr = "TANQUE: " + std::to_string(tanque) + "/" + std::to_string(tanqueMax);
-    std::string capacidadeStr = "CAPACIDADE: " + std::to_string(capacidade) + "/" + std::to_string(capacidadeMax);
-    std::string pesoStr = "PESO: " + std::to_string(peso) + "/" + std::to_string(pesoMax);
+void FaseGame::informativo(int tanque, int tanqueMax, int capacidade, int capacidadeMax, int peso, int pesoMax){
+
+    std::string tanqueStr = "FUEL: " + std::to_string(tanque) + "/" + std::to_string(tanqueMax);
+    std::string capacidadeStr = "CAPACITY: " + std::to_string(capacidade) + "/" + std::to_string(capacidadeMax);
+    std::string pesoStr = "WEIGHT: " + std::to_string(peso) + "/" + std::to_string(pesoMax);
 
     int totalWidth = (180 / 3) - 3;
 
-    auto printLinha = [totalWidth](const std::string& leftText, const std::string& middleText, const std::string& rightText) {
-        std::cout << "| " << std::setw(totalWidth) << std::left << leftText
-                  << "| " << std::setw(totalWidth) << std::left << middleText
-                  << "| " << std::setw(totalWidth) << std::left << rightText << " |" << std::endl;
-    };
-
-    printLinha(tanqueStr, capacidadeStr, pesoStr);
+    std::cout << "| " << std::setw(totalWidth) << std::left << tanqueStr
+                << "| " << std::setw(totalWidth) << std::left << capacidadeStr
+                << "| " << std::setw(totalWidth) << std::left << pesoStr << " |" << std::endl;
 }
 

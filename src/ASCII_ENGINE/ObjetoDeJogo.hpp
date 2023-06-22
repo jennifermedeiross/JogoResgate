@@ -25,11 +25,11 @@ class ObjetoDeJogo : public GameBase
         virtual ~ObjetoDeJogo() { delete spriteObj; }
 
         bool colideCom(ObjetoDeJogo &) const;
-        void moveTo(unsigned, unsigned);
-        void moveLeft();
-        void moveRigth();
-        void moveDown();
-        void moveUp();
+        virtual void moveTo(unsigned, unsigned);
+        virtual void moveLeft();
+        virtual void moveRigth();
+        virtual void moveDown();
+        virtual void moveUp();
 
         // GETTERS E SETTERS
         SpriteBase *getSpriteObj(){ return this->spriteObj; }

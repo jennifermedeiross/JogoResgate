@@ -1,12 +1,12 @@
-#include "Helicoptero.hpp"
+#include "Heroi.hpp"
 
-void Helicoptero::resgate(){
+void Heroi::resgate(){
     if(getCapacidade() <= getCapacidadeMax() && getCapacidade() > 0){
         this->capacidade -= 1;
     }
 }
 
-void Helicoptero::abastecer(){
+void Heroi::abastecer(){
     int limite = getTanque() + (getTanqueMax()/5);
 
     if(limite < getTanqueMax()){
@@ -16,11 +16,11 @@ void Helicoptero::abastecer(){
     }
 }
 
-void Helicoptero::subtrairPeso(int peso){
+void Heroi::subtrairPeso(int peso){
     this->peso -= peso;
 }
 
-void Helicoptero::processoDeResgate(Pessoa &pessoa, int novaC, int novaL){
+void Heroi::processoDeResgate(Pessoa &pessoa, int novaC, int novaL){
     resgate();
     subtrairPeso(pessoa.getPeso());
     pessoa.desativar();
@@ -29,33 +29,33 @@ void Helicoptero::processoDeResgate(Pessoa &pessoa, int novaC, int novaL){
     pessoa.resgatarPessoa();
 }
 
-void Helicoptero::setCapacidade(unsigned capacidade){
+void Heroi::setCapacidade(unsigned capacidade){
     this->capacidade = capacidade;
 }
 
-void Helicoptero::setCapacidadeMax(unsigned capacidadeMax){
+void Heroi::setCapacidadeMax(unsigned capacidadeMax){
     this->capacidadeMax = capacidadeMax;
 }
 
-void Helicoptero::setTanque(double tanque){
+void Heroi::setTanque(double tanque){
     this->tanque = tanque;
 }
 
-void Helicoptero::setTanqueMax(double max){
+void Heroi::setTanqueMax(double max){
     this->tanqueMax = max;
 }
 
-void Helicoptero::setPeso(double peso){
+void Heroi::setPeso(double peso){
     this->peso = peso;
 }
 
-void Helicoptero::setPesoMax(double max){
+void Heroi::setPesoMax(double max){
     this->pesoMax = max;
 }
 
 
 // GAMEBASE
-void Helicoptero::update(){
-    if(this->tanque > 0) this->tanque -= 5;
+void Heroi::update(){
+    if(this->tanque > 0) this->tanque -= 3;
     this->ObjetoDeJogo::update();
 }

@@ -1,23 +1,23 @@
-#ifndef HELICOPTERO_HPP
-#define HELICOPTERO_HPP
+#ifndef HEROI_HPP
+#define HEROI_HPP
 
 #include "ASCII_ENGINE/ObjetoDeJogo.hpp"
 #include "Pessoa.hpp"
 
-class Helicoptero : public ObjetoDeJogo
+class Heroi : public ObjetoDeJogo
 {
     private:
         unsigned capacidade, capacidadeMax;
         double tanque, tanqueMax, peso, pesoMax;
 
     public:
-        Helicoptero(const ObjetoDeJogo &obj) :
+        Heroi(const ObjetoDeJogo &obj) :
             ObjetoDeJogo(obj), capacidade(2), capacidadeMax(2), tanque(600), tanqueMax(600), peso(150), pesoMax(150) {}
 
-        Helicoptero(const ObjetoDeJogo &obj, unsigned capacidade, double tanque, double peso) :
+        Heroi(const ObjetoDeJogo &obj, unsigned capacidade, double tanque, double peso) :
             ObjetoDeJogo(obj), capacidade(capacidade), capacidadeMax(capacidade), tanque(tanque), tanqueMax(tanque), peso(peso), pesoMax(peso) {}
         
-        virtual ~Helicoptero(){}
+        virtual ~Heroi(){}
 
         void resgate();
         void abastecer();

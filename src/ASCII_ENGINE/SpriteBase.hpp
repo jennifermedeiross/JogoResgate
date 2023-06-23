@@ -7,6 +7,7 @@ class SpriteBase : public GameBase{
     private:
         std::string caminho;
         std::vector<std::string> sprite;
+        int altura, largura;
 
     public:
         SpriteBase(){}
@@ -18,9 +19,13 @@ class SpriteBase : public GameBase{
 
         std::string getCaminho() const { return this->caminho; }
         std::vector<std::string> getSprite() const { return this->sprite; }
+        int getAltura() const { return this->altura; }
+        int getLargura() const { return this->largura; }
 
         void setCaminho(std::string);
         void setSprite(std::vector<std::string>);
+        void setAltura(int);
+        void setLargura(int);
 
         virtual SpriteBase *copy() = 0;
         

@@ -9,8 +9,8 @@ void Sprite::draw(SpriteBase &base, unsigned colunaDesejada, unsigned linhaDesej
     const std::vector<std::string> desenhoOrigem = this->getSprite();
     std::vector<std::string> desenhoDestino = base.getSprite();
 
-    int alturaOrigem = desenhoOrigem.size();
-    int alturaDestino = desenhoDestino.size();
+    int alturaOrigem = getAltura();
+    int alturaDestino = base.getAltura();
 
     for (int i = 0; i < alturaOrigem; i++) {
 

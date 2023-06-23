@@ -3,6 +3,8 @@
 SpriteBase::SpriteBase(std::string caminho){
     setCaminho(caminho);
     vetorizarArquivo();
+    this->altura = getSprite().size();
+    this->largura = getSprite()[0].size();
 }
 
 void SpriteBase::vetorizarArquivo() {
@@ -30,4 +32,12 @@ void SpriteBase::setCaminho(std::string caminho){
 
 void SpriteBase::setSprite(std::vector<std::string> novoSprite){
     this->sprite = novoSprite;
+}
+
+void SpriteBase::setAltura(int altura){
+    this->altura = altura;
+}
+
+void SpriteBase::setLargura(int largura){
+    this->largura = largura;
 }

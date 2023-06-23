@@ -10,13 +10,13 @@ ObjetoDeJogo::ObjetoDeJogo(const ObjetoDeJogo &obj){
 bool ObjetoDeJogo::colideCom(ObjetoDeJogo &obj) const{
     int colunaObjetoAtual = this->getColuna();
     int linhaObjetoAtual = this->getLinha();
-    int larguraObjetoAtual = this->spriteObj->getSprite()[0].size();
-    int alturaObjetoAtual = this->spriteObj->getSprite().size();
+    int larguraObjetoAtual = this->spriteObj->getLargura();
+    int alturaObjetoAtual = this->spriteObj->getAltura();
 
     int colunaOutroObjeto = obj.getColuna();
     int linhaOutroObjeto = obj.getLinha();
-    int larguraOutroObjeto = obj.getSpriteObj()->getSprite()[0].size();
-    int alturaOutroObjeto = obj.getSpriteObj()->getSprite().size();
+    int larguraOutroObjeto = obj.getSpriteObj()->getAltura();
+    int alturaOutroObjeto = obj.getSpriteObj()->getLargura();
     
     if(colunaObjetoAtual < colunaOutroObjeto + larguraOutroObjeto &&
         colunaOutroObjeto < colunaObjetoAtual + larguraObjetoAtual &&

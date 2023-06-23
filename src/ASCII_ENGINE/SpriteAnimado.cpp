@@ -8,21 +8,29 @@ void SpriteAnimado::lerMedidas(){
 
     this->quantidadeSprites = quantidade;
     this->alturaSprites = altura;
+
+}
+
+void SpriteAnimado::imprimirSpriteAnimado(){
+    for (std::string  linha : this->getSpriteAtual()){
+        std::cout << linha << std::endl;
+    }
 }
 
 void SpriteAnimado::dividirSprites(){
+    int linha = 1;
+    Sprite subsprite;
+    int altura = this->alturaSprites; 
+    std::vector<std::string> vectorSubSprite;
+
     for (int i = 0; i < this->quantidadeSprites; i++){
-        int altura = this->alturaSprites;
-        int linha = 2;
-        Sprite subsprite;
+        vectorSubSprite.clear();
 
         for(int j = linha; j < altura+linha; j++){
-            std::vector<std::string> vectorSubSprite;
-            
             vectorSubSprite.push_back(getSprite()[j]);
-
-            subsprite.setSprite(vectorSubSprite);
-        }
+        } 
+        
+        subsprite.setSprite(vectorSubSprite);
 
         this->sprites.push_back(subsprite);
         linha+=(altura+1);
@@ -30,11 +38,11 @@ void SpriteAnimado::dividirSprites(){
 }
 
 void SpriteAnimado::draw(SpriteBase &base, unsigned colunaDesejada, unsigned linhaDesejada){
-    const std::vector<std::string> desenhoOrigem = this->getSpriteAtual().getSprite();
+    const std::vector<std::string> desenhoOrigem = this->getSpriteAtual();
     std::vector<std::string> desenhoDestino = base.getSprite();
 
-    int alturaOrigem = desenhoOrigem.size();
-    int alturaDestino = desenhoDestino.size();
+    int alturaOrigem = getAltura();
+    int alturaDestino = base.getAltura();
 
     for (int i = 0; i < alturaOrigem; i++) {
 
@@ -60,8 +68,6 @@ void SpriteAnimado::draw(SpriteBase &base, unsigned colunaDesejada, unsigned lin
 }
 
 void SpriteAnimado::update(){
-    lerMedidas();
-    dividirSprites();
     this->spriteAtual++;
 
     if(this->spriteAtual >= this->quantidadeSprites)

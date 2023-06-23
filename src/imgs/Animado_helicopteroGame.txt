@@ -1,0 +1,120 @@
+12 9
+xxx______.........--=T=--.........______
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxx______.......--=T=--.......______
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxx______...--=T=--...______
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxxxx____...--=T=--...____
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxxxxxxxxx__--=T=--__
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxxxxxxxxxxxx-=T=-
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxxxxxxxxxxxxx=T=
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxxxxxxxxxxxx-=T=-
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxxxxxxxxx__--=T=--__
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxxxx____...--=T=--...____
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxxxxxx______...--=T=--...______
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""
+
+xxxxx______.......--=T=--.......______
+xxxxxx.xxxxxxxxxxxxx|:|
+x:-. //xxxxxxxxxxx/""""""-.
+x': '-._____..--""(""""""()`---.__
+xx/:   _..__   ''  ":""""'[] |""`\\
+xx': :'xxxxx`-.     _:._     '"""" :
+xxx::xxxxxxxxxx'--=:____:.___....-"
+xxxxxxxxxxxxxxxxxxxx\xxxxxxxx\     ,
+xxxxxxxxxxxxxx""""""""""""""""""""""

@@ -210,7 +210,7 @@ void FaseGame::init(){
     Sprite nuvens2("src/imgs/nuvens2.txt");
     Sprite plataformas("src/imgs/plataformas.txt");
     Sprite cacto("src/imgs/cacto.txt");
-    Sprite pessoa("src/imgs/pessoa.txt");
+    SpriteAnimado pessoa("src/imgs/Animado_pessoa.txt");
 
     informacoes.draw(screen, 143, 0);
     plataformas.draw(screen, 1, 13);
@@ -228,7 +228,7 @@ void FaseGame::init(){
     pPessoa4 = new Pessoa(ObjetoDeJogo(pessoa, 130, 21), 80.00);
     pPessoa5 = new Pessoa(ObjetoDeJogo(pessoa, 80, 21), 90.00);
     pPessoa6 = new Pessoa(ObjetoDeJogo(pessoa, 60, 39), 50.00);
-    pHeroi = new Heroi(ObjetoDeJogo(Sprite("src/imgs/helicopteroGame.txt"), 0, 4));
+    pHeroi = new Heroi(ObjetoDeJogo(SpriteAnimado("src/imgs/Animado_helicopteroGame.txt"), 0, 4));
     pCombustivel = new Combustivel(ObjetoDeJogo(Sprite("src/imgs/combustivel.txt"), 35, 29));
     pBase = new Base(ObjetoDeJogo(Sprite("src/imgs/base.txt"), 130, 42));
 

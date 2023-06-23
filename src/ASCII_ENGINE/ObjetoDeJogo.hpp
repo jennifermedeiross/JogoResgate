@@ -46,7 +46,7 @@ class ObjetoDeJogo : public GameBase
 
         // GAMEBASE
         virtual void init(){}
-        virtual void update(){}
+        virtual void update();
         virtual void draw(SpriteBase&, unsigned, unsigned);
     };
 

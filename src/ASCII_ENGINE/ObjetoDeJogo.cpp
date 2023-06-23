@@ -90,3 +90,7 @@ void ObjetoDeJogo::draw(SpriteBase &base, unsigned x, unsigned y){
         spriteObj->draw(base, x, y);
     }
 }
+
+void ObjetoDeJogo::update(){
+    this->getSpriteObj()->update();
+}

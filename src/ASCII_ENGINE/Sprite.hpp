@@ -8,6 +8,7 @@ class Sprite : public SpriteBase {
     public:
         Sprite(std::string caminho) : 
             SpriteBase(caminho) {}
+        Sprite(){}
         virtual ~Sprite(){}
 
         virtual SpriteBase *copy();

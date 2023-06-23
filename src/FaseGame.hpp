@@ -2,7 +2,7 @@
 #define FASEGAME_HPP
 
 #include "ASCII_ENGINE/Fase.hpp"
-#include "Helicoptero.hpp"
+#include "Heroi.hpp"
 #include "Combustivel.hpp"
 #include "Base.hpp"
 #include "Pessoa.hpp"
@@ -12,7 +12,7 @@
 class FaseGame : public Fase
 {
     private:
-        Helicoptero *pHelicoptero;
+        Heroi *pHeroi;
         Combustivel *pCombustivel;
         Base *pBase;
         Pessoa *pPessoa1;

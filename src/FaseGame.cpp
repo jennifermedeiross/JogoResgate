@@ -19,19 +19,19 @@ void FaseGame::run(){
     while (true) {
         
         system("clear");
-        informativo(pHelicoptero->getTanque(), pHelicoptero->getTanqueMax(),
-                pHelicoptero->getCapacidade(), pHelicoptero->getCapacidadeMax(),
-                pHelicoptero->getPeso(), pHelicoptero->getPesoMax());
+        informativo(pHeroi->getTanque(), pHeroi->getTanqueMax(),
+                pHeroi->getCapacidade(), pHeroi->getCapacidadeMax(),
+                pHeroi->getPeso(), pHeroi->getPesoMax());
 
         draw(screen, 0 ,0);
         show(&screen);
         char entrada = getTeclado().getch();
 
-        if(pHelicoptero->getTanque() == 0){
+        if(pHeroi->getTanque() == 0){
             system("clear");
-            informativo(pHelicoptero->getTanque(), pHelicoptero->getTanqueMax(),
-                pHelicoptero->getCapacidade(), pHelicoptero->getCapacidadeMax(),
-                pHelicoptero->getPeso(), pHelicoptero->getPesoMax());
+            informativo(pHeroi->getTanque(), pHeroi->getTanqueMax(),
+                pHeroi->getCapacidade(), pHeroi->getCapacidadeMax(),
+                pHeroi->getPeso(), pHeroi->getPesoMax());
             gameOver.draw(screen, 35 , 15);
             show(&screen);
             somGame.pause();
@@ -42,9 +42,9 @@ void FaseGame::run(){
 
         if (qntResgatado == 6){
             system("clear");
-            informativo(pHelicoptero->getTanque(), pHelicoptero->getTanqueMax(),
-                pHelicoptero->getCapacidade(), pHelicoptero->getCapacidadeMax(),
-                pHelicoptero->getPeso(), pHelicoptero->getPesoMax());
+            informativo(pHeroi->getTanque(), pHeroi->getTanqueMax(),
+                pHeroi->getCapacidade(), pHeroi->getCapacidadeMax(),
+                pHeroi->getPeso(), pHeroi->getPesoMax());
             gameWin.draw(screen, 35 , 15);
             show(&screen);
             somGame.pause();
@@ -64,22 +64,22 @@ void FaseGame::run(){
 
 
         if(entrada == 'w' || entrada == 'W'){ 
-            pHelicoptero->moveUp();
+            pHeroi->moveUp();
             update();
         }
 
         else if(entrada == 's' || entrada == 'S'){ 
-            pHelicoptero->moveDown();
+            pHeroi->moveDown();
             update();
         }
 
         else if(entrada == 'd' || entrada == 'D'){ 
-            pHelicoptero->moveRigth();
+            pHeroi->moveRigth();
             update();
         }
 
         if(entrada == 'a' || entrada == 'A'){ 
-            pHelicoptero->moveLeft();
+            pHeroi->moveLeft();
             update();
         }
 
@@ -87,81 +87,81 @@ void FaseGame::run(){
             update();
 
             //COMBUSTIVEL
-            if(pHelicoptero->colideCom(*pCombustivel)){
-                pHelicoptero->abastecer();
+            if(pHeroi->colideCom(*pCombustivel)){
+                pHeroi->abastecer();
                 abasteceu.play();
             }
 
             //PESSOA 1
-            else if(pHelicoptero->colideCom(*pPessoa1) && 
+            else if(pHeroi->colideCom(*pPessoa1) && 
                 !(pPessoa1->getResgatada()) &&
-                pHelicoptero->getPeso() > pPessoa1->getPeso()){
+                pHeroi->getPeso() > pPessoa1->getPeso()){
 
-                if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->processoDeResgate(*pPessoa1, 131, 35);
+                if(pHeroi->getCapacidade() > 0){
+                    pHeroi->processoDeResgate(*pPessoa1, 131, 35);
                     resgatou.play();
                 }
             }
             
             //PESSOA 2
-            else if(pHelicoptero->colideCom(*pPessoa2) && 
+            else if(pHeroi->colideCom(*pPessoa2) && 
                 !(pPessoa2->getResgatada()) &&
-                pHelicoptero->getPeso() > pPessoa2->getPeso()){
+                pHeroi->getPeso() > pPessoa2->getPeso()){
 
-                if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->processoDeResgate(*pPessoa2, 137, 35);
+                if(pHeroi->getCapacidade() > 0){
+                    pHeroi->processoDeResgate(*pPessoa2, 137, 35);
                     resgatou.play();
                 }
             }
 
             //PESSOA 3
-            else if(pHelicoptero->colideCom(*pPessoa3) && 
+            else if(pHeroi->colideCom(*pPessoa3) && 
                 !(pPessoa3->getResgatada()) &&
-                pHelicoptero->getPeso() > pPessoa3->getPeso()){
+                pHeroi->getPeso() > pPessoa3->getPeso()){
 
-                if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->processoDeResgate(*pPessoa3, 143, 35);
+                if(pHeroi->getCapacidade() > 0){
+                    pHeroi->processoDeResgate(*pPessoa3, 143, 35);
                     resgatou.play();
                 }
             }
 
             // PESSOA 4
-            else if(pHelicoptero->colideCom(*pPessoa4) && 
+            else if(pHeroi->colideCom(*pPessoa4) && 
                 !(pPessoa4->getResgatada()) &&
-                pHelicoptero->getPeso() > pPessoa4->getPeso()){
+                pHeroi->getPeso() > pPessoa4->getPeso()){
 
-                if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->processoDeResgate(*pPessoa4, 149, 35);
+                if(pHeroi->getCapacidade() > 0){
+                    pHeroi->processoDeResgate(*pPessoa4, 149, 35);
                     resgatou.play();
                 }
             }
 
             //PESSOA 5
-            else if(pHelicoptero->colideCom(*pPessoa5) && 
+            else if(pHeroi->colideCom(*pPessoa5) && 
                 !(pPessoa5->getResgatada()) &&
-                pHelicoptero->getPeso() > pPessoa5->getPeso()){
+                pHeroi->getPeso() > pPessoa5->getPeso()){
 
-                if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->processoDeResgate(*pPessoa5, 155, 35);
+                if(pHeroi->getCapacidade() > 0){
+                    pHeroi->processoDeResgate(*pPessoa5, 155, 35);
                     resgatou.play();
                 }
             }
 
             //PESSOA 6
-            else if(pHelicoptero->colideCom(*pPessoa6) && 
+            else if(pHeroi->colideCom(*pPessoa6) && 
                 !(pPessoa6->getResgatada()) &&
-                pHelicoptero->getPeso() > pPessoa6->getPeso()){
+                pHeroi->getPeso() > pPessoa6->getPeso()){
 
-                if(pHelicoptero->getCapacidade() > 0){
-                    pHelicoptero->processoDeResgate(*pPessoa6, 161, 35);
+                if(pHeroi->getCapacidade() > 0){
+                    pHeroi->processoDeResgate(*pPessoa6, 161, 35);
                     resgatou.play();
                 }
             }
 
             //BASE
-            else if(pHelicoptero->colideCom(*pBase)){
-                pHelicoptero->setCapacidade(pHelicoptero->getCapacidadeMax());
-                pHelicoptero->setPeso(pHelicoptero->getPesoMax());
+            else if(pHeroi->colideCom(*pBase)){
+                pHeroi->setCapacidade(pHeroi->getCapacidadeMax());
+                pHeroi->setPeso(pHeroi->getPesoMax());
 
                 if (pPessoa1->getAtivo() == false) {
                     pPessoa1->ativar();
@@ -228,7 +228,7 @@ void FaseGame::init(){
     pPessoa4 = new Pessoa(ObjetoDeJogo(pessoa, 130, 21), 80.00);
     pPessoa5 = new Pessoa(ObjetoDeJogo(pessoa, 80, 21), 90.00);
     pPessoa6 = new Pessoa(ObjetoDeJogo(pessoa, 60, 39), 50.00);
-    pHelicoptero = new Helicoptero(ObjetoDeJogo(Sprite("src/imgs/helicopteroGame.txt"), 0, 4));
+    pHeroi = new Heroi(ObjetoDeJogo(Sprite("src/imgs/helicopteroGame.txt"), 0, 4));
     pCombustivel = new Combustivel(ObjetoDeJogo(Sprite("src/imgs/combustivel.txt"), 35, 29));
     pBase = new Base(ObjetoDeJogo(Sprite("src/imgs/base.txt"), 130, 42));
 
@@ -241,7 +241,7 @@ void FaseGame::init(){
     lista.push_back(pPessoa6);
     lista.push_back(pBase);
     lista.push_back(pCombustivel);
-    lista.push_back(pHelicoptero);
+    lista.push_back(pHeroi);
 
     this->setListaObjetos(lista);
 }

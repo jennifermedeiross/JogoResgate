@@ -20,10 +20,11 @@ void SpriteBase::vetorizarArquivo() {
     }
 }
 
-void SpriteBase::imprimir(){
-    for (std::string  linha : this->getSprite()){
-        std::cout << linha << std::endl;
+std::ostream& operator<<(std::ostream& out, const SpriteBase& spriteBase) {
+    for (const std::string& linha : spriteBase.sprite) {
+        out << linha << std::endl;
     }
+    return out;
 }
 
 void SpriteBase::setCaminho(std::string caminho){

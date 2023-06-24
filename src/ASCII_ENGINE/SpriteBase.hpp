@@ -4,6 +4,7 @@
 #include "GameBase.hpp"
 
 class SpriteBase : public GameBase{
+
     private:
         std::string caminho;
         std::vector<std::string> sprite;
@@ -14,8 +15,8 @@ class SpriteBase : public GameBase{
         SpriteBase(std::string);
         virtual ~SpriteBase(){};
         
+        friend std::ostream& operator<<(std::ostream&, const SpriteBase&);
         void vetorizarArquivo();
-        void imprimir();
 
         std::string getCaminho() const { return this->caminho; }
         std::vector<std::string> getSprite() const { return this->sprite; }

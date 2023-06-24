@@ -8,6 +8,7 @@
 #include "Combustivel.hpp"
 #include "Base.hpp"
 #include "FaseGame.hpp"
+#include "FaseMenu.hpp"
 
 int main() {
     FaseGame fase("FaseGame");

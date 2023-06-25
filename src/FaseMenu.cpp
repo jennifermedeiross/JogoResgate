@@ -64,7 +64,8 @@ void FaseMenu::run(){
 
             else if(pSelector->colideCom(*pExit)){
                 setState("end");
-                break;
+                somMenu.stop();
+                exit(0);
             }
         }
 

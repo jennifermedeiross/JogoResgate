@@ -30,6 +30,7 @@ void FaseGame::run(){
 
         if(pHeroi->getTanque() == 0){
             system("clear");
+            setState("FaseMenu");
             informativo(pHeroi->getTanque(), pHeroi->getTanqueMax(),
                 pHeroi->getCapacidade(), pHeroi->getCapacidadeMax(),
                 pHeroi->getPeso(), pHeroi->getPesoMax());
@@ -43,6 +44,7 @@ void FaseGame::run(){
 
         if (qntResgatado == 6){
             system("clear");
+            setState("FaseMenu");
             informativo(pHeroi->getTanque(), pHeroi->getTanqueMax(),
                 pHeroi->getCapacidade(), pHeroi->getCapacidadeMax(),
                 pHeroi->getPeso(), pHeroi->getPesoMax());

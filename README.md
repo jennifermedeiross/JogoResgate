@@ -23,7 +23,8 @@ STL
   <a href="#requisitos">Requisitos</a></h3> | 
   <a href="#instalação">Instalação</a></h3> | 
   <a href="#objetivo">Objetivo</a></h3> | 
-  <a href="#jogabilidade">Jogabilidade</a></h3>
+  <a href="#jogabilidade">Jogabilidade</a> |
+  <a href="#imagens">Imagens</a></h3>
   
 </div>
 
@@ -78,3 +79,8 @@ O objetivo do jogo é resgatar 6 pessoas em perigo usando um helicóptero (heró
     q ➔ sai do jogo.
 
 Sinta-se à vontade para jogar e aproveitar o resgate das pessoas em perigo!
+## Imagens:
+![image](https://github.com/jennifermedeiross/JogoResgate/assets/106833007/143ed55a-8e41-4ecf-9c8a-53c9403e3ca1)
+
+![image](https://github.com/jennifermedeiross/JogoResgate/assets/106833007/3e121aa8-72f7-4131-a4ff-a44c97b90be8)
+

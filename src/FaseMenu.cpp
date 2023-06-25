@@ -17,7 +17,6 @@ void FaseMenu::run(){
         show(&screen);
         char entrada = getTeclado().getch();
 
-
         if( entrada == 'q' || entrada == 'Q'){
             setState("end");
             somMenu.stop();
@@ -68,8 +67,6 @@ void FaseMenu::run(){
                 exit(0);
             }
         }
-
-
     }
 }
 

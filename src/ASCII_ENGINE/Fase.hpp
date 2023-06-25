@@ -20,7 +20,13 @@ class Fase : public GameBase
     public:
         Fase(std::string state) : STATE(state) {}
         
-        virtual ~Fase() { delete background; }
+        virtual ~Fase() { 
+            delete background;
+            for (auto it = listaObjetos.begin(); it != listaObjetos.end(); ++it) {
+                delete *it;
+            }
+            listaObjetos.clear();
+        }
 
         virtual void run() = 0;
         void show(SpriteBase *);

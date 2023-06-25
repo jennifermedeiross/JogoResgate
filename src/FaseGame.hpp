@@ -24,7 +24,18 @@ class FaseGame : public Fase
 
     public:
         FaseGame(std::string state) : Fase(state){}
-        virtual ~FaseGame(){}
+        virtual ~FaseGame(){
+            Fase::~Fase();
+            delete pHeroi;
+            delete pCombustivel;
+            delete pBase;
+            delete pPessoa1;
+            delete pPessoa2;
+            delete pPessoa3;
+            delete pPessoa4;
+            delete pPessoa5;
+            delete pPessoa6;
+        }
 
         void informativo(int, int, int, int, int, int);
 

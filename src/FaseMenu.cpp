@@ -39,7 +39,6 @@ void FaseMenu::run(){
 
             if(pSelector->colideCom(*pStart)){
                 selecionou.play();
-                sleep(1);
                 setState("FaseGame");
                 break;
             }

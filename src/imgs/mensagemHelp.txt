@@ -22,6 +22,8 @@
 |                                                                                           |
 |   d - move the helicopter to the right                                                    |
 |                                                                                           |
+|   p - pause game                                                                          |
+|                                                                                           |
 |   X - pick up person/drop off person at the base                                          |                                                                                   |
 |                                                                                           |
 |   q - quit the game                                                                       |

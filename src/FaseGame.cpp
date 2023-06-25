@@ -4,6 +4,7 @@ void FaseGame::run(){
     Sprite screen("src/imgs/screen.txt");
     Sprite gameOver("src/imgs/gameOver.txt");
     Sprite gameWin("src/imgs/gameWin.txt");
+    Sprite pause("src/imgs/pause.txt");
     Sound somGame("src/musics/game.mp3");
     Sound somGameOver("src/musics/gameover.mp3");
     Sound somVitoria("src/musics/vitoria.mp3");
@@ -56,6 +57,19 @@ void FaseGame::run(){
         else if(entrada == 'q' || entrada == 'Q'){ 
             this->setState("FaseMenu");
             break;
+        }
+
+        else if(entrada == 'p' || entrada == 'P'){
+            resgatou.play();
+            system("clear");
+            informativo(pHeroi->getTanque(), pHeroi->getTanqueMax(),
+                pHeroi->getCapacidade(), pHeroi->getCapacidadeMax(),
+                pHeroi->getPeso(), pHeroi->getPesoMax());
+            pause.draw(screen, 57, 18);
+            somGame.pause();
+            show(&screen);
+            std::cin.ignore();
+            somGame.unpause();
         }
 
         else if (entrada == '\n'){

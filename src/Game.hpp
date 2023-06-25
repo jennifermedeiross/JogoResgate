@@ -15,11 +15,14 @@ class Game {
             FaseMenu faseMenu("FaseMenu");
 
             faseMenu.run();
-            
+
             while(true){
 
                 if(faseMenu.faseState() == "FaseGame"){
                     faseGame.run();
+                    if(faseGame.faseState() == "FaseMenu"){
+                        faseMenu.run();
+                    }
                 }
                 else if(faseMenu.faseState() == "end"){
                     break;

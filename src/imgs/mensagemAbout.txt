@@ -1,0 +1,23 @@
+==============================================================================================
+|                                                                               press enter  |
+|                                                                                 to return  |
+|                                                                                            |
+|                                                                                            |
+|                                                                                            |
+|          This project is the final assignment for the Object-Oriented Programming          |
+|          (OOP) course in C++.                                                              |
+|          The ASCII Rescue Game was developed using ASCII characters to represent           |
+|          visual elements, giving it a retro and nostalgic style.                           |
+|                                                                                            |
+|          Developed by Jennifer Medeiros, a computer engineering student in the             |
+|          third semester at IFPB - Campus Campina Grande.                                   |
+|                                                                                            |
+|          Check out the project at:                                                         |
+|          https://github.com/jennifermedeiross/JogoResgate                                  |
+|                                                                                            |
+|                                                                                            |
+|                                                                                            |
+|                                                                                            |
+|                                                                                            |
+|                                                                                            |
+==============================================================================================

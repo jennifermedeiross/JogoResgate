@@ -1,0 +1,29 @@
+=============================================================================================
+|                                        HELP GAME                             press enter  |
+|                                                                                to return  |
+|   - The objective of the game is to rescue 6 people in danger using a hero.               |
+|                                                                                           |
+|   - The rescue is completed when the person is brought to the base.                       |
+|                                                                                           |
+|   - Always pay attention to the fuel level.                                               |
+|                                                                                           |
+|   - A person cannot be rescued if the weight exceeds the capacity or if there is          |
+|   no space for them.                                                                      |
+|                                                                                           |
+|   ** Victory: All the people have been rescued.                                           |
+|                                                                                           |
+|   ** Defeat: Fuel has run out and the people have not been saved.                         |
+|                                                                                           |
+|   w - move the helicopter upwards                                                         |
+|                                                                                           |
+|   s - move the helicopter downwards                                                       |
+|                                                                                           |
+|   a - move the helicopter to the left                                                     |
+|                                                                                           |
+|   d - move the helicopter to the right                                                    |
+|                                                                                           |
+|   X - pick up person/drop off person at the base                                          |                                                                                   |
+|                                                                                           |
+|   q - quit the game                                                                       |
+|                                                                                           |
+=============================================================================================

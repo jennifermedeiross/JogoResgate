@@ -20,7 +20,8 @@ void FaseMenu::run(){
 
         if( entrada == 'q' || entrada == 'Q'){
             setState("end");
-            break;
+            somMenu.stop();
+            exit(0);
         }
 
         else if( entrada == 'd' || entrada == 'D'){

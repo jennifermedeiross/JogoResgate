@@ -1,0 +1,3 @@
+d - move right
+a - move left
+X - select

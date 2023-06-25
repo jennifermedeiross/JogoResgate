@@ -73,6 +73,7 @@ void FaseMenu::run(){
 
 void FaseMenu::init(){
     Sprite screen("src/imgs/screen.txt");
+    Sprite info("src/imgs/infoMenu.txt");
     Sprite gameName("src/imgs/gameName.txt");
     Sprite start("src/imgs/Menustart.txt");
     Sprite help("src/imgs/Menuhelp.txt");
@@ -80,6 +81,7 @@ void FaseMenu::init(){
     Sprite exit("src/imgs/Menuexit.txt");
     Sprite selector("src/imgs/selector.txt");
 
+    info.draw(screen, 160, 1);
     gameName.draw(screen, 58, 15);
 
     this->setBackground(&screen);

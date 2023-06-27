@@ -23,7 +23,7 @@ class Fase : public GameBase
         virtual ~Fase() { 
             delete background;
             for (auto it = listaObjetos.begin(); it != listaObjetos.end(); ++it) {
-                delete *it;
+                delete (*it);
             }
         }
 

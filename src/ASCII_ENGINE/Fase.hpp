@@ -25,7 +25,6 @@ class Fase : public GameBase
             for (auto it = listaObjetos.begin(); it != listaObjetos.end(); ++it) {
                 delete *it;
             }
-            listaObjetos.clear();
         }
 
         virtual void run() = 0;

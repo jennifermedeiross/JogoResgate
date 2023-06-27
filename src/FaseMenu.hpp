@@ -14,14 +14,7 @@ class FaseMenu : public Fase{
 
     public:
         FaseMenu(std::string state) : Fase(state){}
-        ~FaseMenu(){
-            Fase::~Fase();
-            delete pStart;
-            delete pHelp;
-            delete pAbout;
-            delete pExit;
-            delete pSelector;
-        }
+        ~FaseMenu(){}
 
         virtual void run();
         void moveRigth(ObjetoDeJogo &);

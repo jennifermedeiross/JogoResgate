@@ -79,7 +79,8 @@ O objetivo do jogo é resgatar 6 pessoas em perigo usando um helicóptero (heró
     q ➔ sai do jogo.
 
 Sinta-se à vontade para jogar e aproveitar o resgate das pessoas em perigo!
-## Imagens:
+## Conheça-o:
+**Vídeo demonstrativo:** <a href="https://drive.google.com/file/d/1h3MYc20Tad11yYcmM92x7F89L1qPyfCI/view">JogoResgate</a>
 ![image](https://github.com/jennifermedeiross/JogoResgate/assets/106833007/143ed55a-8e41-4ecf-9c8a-53c9403e3ca1)
 
 ![image](https://github.com/jennifermedeiross/JogoResgate/assets/106833007/3e121aa8-72f7-4131-a4ff-a44c97b90be8)
